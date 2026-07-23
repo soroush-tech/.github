@@ -25,6 +25,23 @@ Reusable pieces published to npm under the [`@soroush.tech`](https://www.npmjs.c
 A type-safe styled-props design system. Build components from theme tokens with `system()` — spacing,
 color, typography, and variants, all inferred from your theme with zero manual union types.
 
+### [`@soroush.tech/design-system`](https://www.npmjs.com/package/@soroush.tech/design-system)
+
+[![npm](https://img.shields.io/npm/v/%40soroush.tech%2Fdesign-system?color=00FC40&label=npm)](https://www.npmjs.com/package/@soroush.tech/design-system)
+[![downloads](https://img.shields.io/npm/dm/%40soroush.tech%2Fdesign-system?color=181717&label=downloads)](https://www.npmjs.com/package/@soroush.tech/design-system)
+
+A themeable React component library powered by `@soroush.tech/styled-system` and its own styling
+engine — token-driven light/dark theming, `createTheme` with per-component defaults and style
+overrides, and accessible primitives from `Button` to `Modal`.
+
+### [`@soroush.tech/markdown`](https://www.npmjs.com/package/@soroush.tech/markdown)
+
+[![npm](https://img.shields.io/npm/v/%40soroush.tech%2Fmarkdown?color=00FC40&label=npm)](https://www.npmjs.com/package/@soroush.tech/markdown)
+[![downloads](https://img.shields.io/npm/dm/%40soroush.tech%2Fmarkdown?color=181717&label=downloads)](https://www.npmjs.com/package/@soroush.tech/markdown)
+
+Headless, composable markdown editing and rendering for the design system — a controlled editor,
+a themed preview renderer, and lazy-loaded mermaid diagrams.
+
 ### [`@soroush.tech/vite-plugin-msw-server`](https://www.npmjs.com/package/@soroush.tech/vite-plugin-msw-server)
 
 [![npm](https://img.shields.io/npm/v/%40soroush.tech%2Fvite-plugin-msw-server?color=00FC40&label=npm)](https://www.npmjs.com/package/@soroush.tech/vite-plugin-msw-server)
@@ -32,6 +49,7 @@ color, typography, and variants, all inferred from your theme with zero manual u
 
 🎭 **Made for end-to-end tests.** Mock the *server side* of your app — runs an `msw/node` server inside
 Vite so SSR data loaders and SSG prerendering resolve against your mocks. No network flake, no seeded backend.
+
 ### [`@soroush.tech/playwright-coverage`](https://www.npmjs.com/package/@soroush.tech/playwright-coverage)
 
 [![npm](https://img.shields.io/npm/v/%40soroush.tech%2Fplaywright-coverage?color=00FC40&label=npm)](https://www.npmjs.com/package/@soroush.tech/playwright-coverage)
@@ -45,7 +63,27 @@ toward the same 100% bar as unit and component tests.
 [![npm](https://img.shields.io/npm/v/%40soroush.tech%2Fbench?color=00FC40&label=npm)](https://www.npmjs.com/package/@soroush.tech/bench)
 [![downloads](https://img.shields.io/npm/dm/%40soroush.tech%2Fbench?color=181717&label=downloads)](https://www.npmjs.com/package/@soroush.tech/bench)
 
-A tiny, ergonomic micro-benchmark harness built on `mitata` — write benchmarks that read like tests.
+Run A/B function and package-version benchmarks inside a CPU/RAM-pinned Docker sandbox —
+stable numbers on noisy machines, results as markdown tables.
+
+---
+
+## ⚙️ Actions
+
+### [`soroush-tech/bench-action`](https://github.com/soroush-tech/bench-action)
+
+A benchmark gate for CI: discovers your `*.bench.ts` files, runs them with `@soroush.tech/bench`
+in a pinned-CPU sandbox, fails the job when a case drops below your minimum speed ratio, and
+keeps one sticky PR comment with the results — posted as the bench bot via an OIDC-verified
+relay, zero token setup.
+
+```yaml
+- uses: soroush-tech/bench-action@v1
+  with:
+    bench-dir: bench
+    baseline-case: previous
+    min-ratio: '80'
+```
 
 ---
 
