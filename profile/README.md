@@ -77,6 +77,9 @@ in a pinned-CPU sandbox, fails the job when a case drops below your minimum spee
 keeps one sticky PR comment with the results — posted as the bench bot via an OIDC-verified
 relay, zero token setup.
 
+On the [GitHub Marketplace](https://github.com/marketplace/actions/soroush-bench) · branded
+comments via the [bench GitHub App](https://github.com/apps/soroush-bench).
+
 ```yaml
 - uses: soroush-tech/bench-action@v1
   with:
